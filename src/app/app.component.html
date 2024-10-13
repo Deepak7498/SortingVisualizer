@@ -1,59 +1,61 @@
-<div class="container text-center mt-4">
-  <div class="bg-dark">
+<div class="background-image">
+  <div class="container text-center ">
+
     <h1 class="mb-4">SORTING VISUALIZER</h1>
-  </div>
-  <div class="row justify-content-center mb-4">
-    <div class="col-md-10 bg-dark text-light p-4 rounded">
-      <div class="d-flex justify-content-between align-items-center">
-        <div>
-          <label for="arraySize" class="form-label">Size of Array:</label>
-          <input type="range" id="arraySize" class="form-range" [value]="arraySize" (input)="updateArray($event)">
-        </div>
 
-        <div>
-          <label for="speed" class="form-label">Down Speed of Algorithm:</label>
-          <input type="range" id="speed" class="form-range" [value]="speed" (input)="setSpeed($event)">
-        </div>
+    <div class="row justify-content-center mb-4">
+      <div class="col-md-10 bg-dark text-light p-4 rounded">
+        <div class="d-flex justify-content-between align-items-center">
+          <div>
+            <label for="arraySize" class="form-label">Size of Array:</label>
+            <input type="range" id="arraySize" class="form-range" [value]="arraySize" (input)="updateArray($event)">
+          </div>
 
-        <div class="d-flex">
-          <button class="btn btn-success me-2" (click)="generateNewArray()">Generate New Array!</button>
+          <div>
+            <label for="speed" class="form-label">Down Speed of Algorithm:</label>
+            <input type="range" id="speed" class="form-range" [value]="speed" (input)="setSpeed($event)">
+          </div>
 
-          <button class="btn btn-primary" (click)="startSorting()">Start Sorting</button>
+          <div class="d-flex">
+            <button class="btn btn-success me-2" (click)="generateNewArray()">Generate New Array!</button>
+
+            <button class="btn btn-primary" (click)="startSorting()">Start Sorting</button>
+          </div>
         </div>
       </div>
     </div>
-  </div>
 
-  <nav class="mb-4">
-    <ul class="nav nav-pills justify-content-center">
-      <li class="nav-item">
-        <a class="nav-link" [class.active]="selectedAlgorithm === 'bubble'" (click)="setAlgorithm('bubble')">Bubble</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" [class.active]="selectedAlgorithm === 'selection'"
-          (click)="setAlgorithm('selection')">Selection</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" [class.active]="selectedAlgorithm === 'insertion'"
-          (click)="setAlgorithm('insertion')">Insertion</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" [class.active]="selectedAlgorithm === 'merge'" (click)="setAlgorithm('merge')">Merge</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" [class.active]="selectedAlgorithm === 'quick'" (click)="setAlgorithm('quick')">Quick</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" [class.active]="selectedAlgorithm === 'heap'" (click)="setAlgorithm('heap')">Heap</a>
-      </li>
-    </ul>
-  </nav>
+    <nav class="mb-4">
+      <ul class="nav nav-pills justify-content-center">
+        <li class="nav-item">
+          <a class="nav-link" [class.active]="selectedAlgorithm === 'bubble'"
+            (click)="setAlgorithm('bubble')">Bubble</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" [class.active]="selectedAlgorithm === 'selection'"
+            (click)="setAlgorithm('selection')">Selection</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" [class.active]="selectedAlgorithm === 'insertion'"
+            (click)="setAlgorithm('insertion')">Insertion</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" [class.active]="selectedAlgorithm === 'merge'" (click)="setAlgorithm('merge')">Merge</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" [class.active]="selectedAlgorithm === 'quick'" (click)="setAlgorithm('quick')">Quick</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" [class.active]="selectedAlgorithm === 'heap'" (click)="setAlgorithm('heap')">Heap</a>
+        </li>
+      </ul>
+    </nav>
 
-  <div class="bar-container">
-    <div class="bar" *ngFor="let value of array" [style.height]="value + 'px'" [style.width]="barWidth + '%'"></div>
+    <div class="bar-container background-wave-image">
+      <div class="bar" *ngFor="let value of array" [style.height]="value + 'px'" [style.width]="barWidth + '%'"></div>
+    </div>
   </div>
 </div>
-
-<footer class="mt-4 text-center">
+<footer class=" text-center">
   <p>Created By <b>Deepak Panwar</b> | © 2024 All rights reserved.</p>
 </footer>
